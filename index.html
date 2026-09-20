@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRD CORPORATION</title>
 
+    <!-- FAVICON (WHITE BUILDING ICON) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2' ry='2'/><path d='M9 22v-4h6v4'/><path d='M8 6h.01'/><path d='M16 6h.01'/><path d='M12 6h.01'/><path d='M12 10h.01'/><path d='M12 14h.01'/><path d='M16 10h.01'/><path d='M16 14h.01'/><path d='M8 10h.01'/><path d='M8 14h.01'/></svg>">
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -108,6 +109,7 @@
             gap: 12px;
             margin-bottom: 50px;
             flex-wrap: wrap;
+            padding: 0 16px;
         }
 
         .tab-btn {
@@ -224,6 +226,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         /* FEATURE ICONS COLORS */
@@ -235,6 +238,7 @@
         .action-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
             padding: 16px 32px;
             border-radius: 12px;
@@ -245,6 +249,7 @@
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            width: auto;
         }
 
         .blue-btn { background: #00b0ff; color: #ffffff; box-shadow: 0 0 25px rgba(0, 176, 255, 0.4); }
@@ -258,6 +263,7 @@
 
         .card-container {
             position: relative;
+            width: 100%;
         }
 
         .card {
@@ -278,12 +284,15 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 24px;
+            gap: 10px;
+            flex-wrap: wrap;
         }
 
         .version-tag {
             font-family: 'JetBrains Mono', monospace;
             color: #8f9ba8;
             font-size: 13px;
+            word-break: break-all;
         }
 
         .status-badge {
@@ -295,6 +304,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            white-space: nowrap;
         }
 
         .blue-badge { background: rgba(0, 176, 255, 0.1); border: 1px solid rgba(0, 176, 255, 0.3); color: #00b0ff; }
@@ -357,6 +367,7 @@
             padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             font-size: 14px;
+            gap: 10px;
         }
 
         .timing-row:last-child {
@@ -373,6 +384,7 @@
             padding: 4px 10px;
             border-radius: 6px;
             font-size: 12px;
+            white-space: nowrap;
         }
 
         .status-open {
@@ -409,11 +421,87 @@
             opacity: 1;
         }
 
+        /* MOBILE & TABLET RESPONSIVE STYLES */
         @media (max-width: 900px) {
-            header { padding: 20px; }
-            .hero h1 { font-size: 40px; }
-            .slide { grid-template-columns: 1fr; gap: 24px; }
-            .content-slider { width: 300%; }
+            header {
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 20px 16px 10px 16px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+                letter-spacing: -0.5px;
+            }
+
+            .hero p {
+                font-size: 15px;
+                margin-bottom: 24px;
+            }
+
+            .tab-container {
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+
+            .tab-btn {
+                padding: 10px 18px;
+                font-size: 11px;
+                flex: 1 1 auto;
+                justify-content: center;
+            }
+
+            .main-wrapper {
+                padding: 0 16px;
+            }
+
+            .slide {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-bottom: 40px;
+            }
+
+            .slide-left h2 {
+                font-size: 32px;
+            }
+
+            .slide-left .subtitle {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .features-list {
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+
+            .feature-item {
+                font-size: 14px;
+            }
+
+            .action-btn {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+
+            .card {
+                padding: 24px;
+                border-radius: 18px;
+            }
+
+            .card-title {
+                font-size: 22px;
+            }
+
+            .toast {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -434,6 +522,7 @@
         <p>Connecting businesses with next-generation communication systems. Reach out via phone, email, or check operating hours.</p>
     </section>
 
+    <!-- Navigation Tabs -->
     <div class="tab-container">
         <button class="tab-btn tab-blue active" id="tab-phone" onclick="switchTab('phone')">
             <i data-lucide="phone" size="16"></i> PHONE
@@ -446,9 +535,11 @@
         </button>
     </div>
 
+    <!-- Main Content Slider -->
     <div class="main-wrapper">
         <div class="content-slider" id="slider">
 
+            <!-- PHONE SLIDE (BLUE) -->
             <div class="slide active-slide" id="slide-phone">
                 <div class="slide-left">
                     <h2 class="blue-text">DIRECT CALL</h2>
@@ -474,6 +565,7 @@
                 </div>
             </div>
 
+            <!-- EMAIL SLIDE (RED) -->
             <div class="slide" id="slide-email">
                 <div class="slide-left">
                     <h2 class="red-text">EMAIL INQUIRY</h2>
@@ -500,6 +592,7 @@
                 </div>
             </div>
 
+            <!-- TIMINGS SLIDE (ORANGE) -->
             <div class="slide" id="slide-timing">
                 <div class="slide-left">
                     <h2 class="orange-text">WORK SCHEDULE</h2>
@@ -540,6 +633,7 @@
         </div>
     </div>
 
+    <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i data-lucide="check-circle" size="18"></i>
         <span id="toast-msg">Copied!</span>
