@@ -528,4 +528,91 @@
                         </div>
                         <div class="card-icon-wrapper orange-wrapper"><i data-lucide="calendar" size="28"></i></div>
                         <div class="card-title orange-title">WEEKLY TIMINGS</div>
-                        <div
+                        <div class="card-subtitle">MRD SCHEDULE</div>
+                        
+                        <div class="timing-row">
+                            <span class="timing-day">Monday – Thursday</span>
+                            <span class="timing-status status-open">WORKTIME</span>
+                        </div>
+                        <div class="timing-row">
+                            <span class="timing-day">Friday</span>
+                            <span class="timing-status status-off">OFF DAY</span>
+                        </div>
+                        <div class="timing-row">
+                            <span class="timing-day">Saturday – Sunday</span>
+                            <span class="timing-status status-open">WORKTIME</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i data-lucide="check-circle" size="18"></i>
+        <span id="toast-msg">Copied!</span>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function switchTab(type) {
+            const slider = document.getElementById('slider');
+            const phoneBtn = document.getElementById('tab-phone');
+            const emailBtn = document.getElementById('tab-email');
+            const timingBtn = document.getElementById('tab-timing');
+
+            const phoneSlide = document.getElementById('slide-phone');
+            const emailSlide = document.getElementById('slide-email');
+            const timingSlide = document.getElementById('slide-timing');
+
+            phoneBtn.classList.remove('active');
+            emailBtn.classList.remove('active');
+            timingBtn.classList.remove('active');
+
+            phoneSlide.classList.remove('active-slide');
+            emailSlide.classList.remove('active-slide');
+            timingSlide.classList.remove('active-slide');
+
+            if (type === 'phone') {
+                slider.style.transform = 'translateX(0%)';
+                phoneBtn.classList.add('active');
+                phoneSlide.classList.add('active-slide');
+            } else if (type === 'email') {
+                slider.style.transform = 'translateX(-33.333%)';
+                emailBtn.classList.add('active');
+                emailSlide.classList.add('active-slide');
+            } else if (type === 'timing') {
+                slider.style.transform = 'translateX(-66.666%)';
+                timingBtn.classList.add('active');
+                timingSlide.classList.add('active-slide');
+            }
+        }
+
+        function copyText(text, message) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(message);
+            }).catch(() => {
+                const area = document.createElement('textarea');
+                area.value = text;
+                document.body.appendChild(area);
+                area.select();
+                document.execCommand('copy');
+                document.body.removeChild(area);
+                showToast(message);
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
