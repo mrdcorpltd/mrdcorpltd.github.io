@@ -360,6 +360,12 @@
             margin-bottom: 16px;
         }
 
+        .card-desc {
+            color: #8f9ba8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
         .timing-row {
             display: flex;
             justify-content: space-between;
@@ -444,6 +450,7 @@
         <p>Connecting businesses with next-generation communication systems. Reach out via phone, email, or check operating hours.</p>
     </section>
 
+    <!-- Navigation Tabs -->
     <div class="tab-container">
         <button class="tab-btn active" id="tab-phone" onclick="switchTab('phone')">
             <i data-lucide="phone" size="16"></i> PHONE
@@ -456,9 +463,11 @@
         </button>
     </div>
 
+    <!-- Main Content Slider -->
     <div class="main-wrapper">
         <div class="content-slider" id="slider">
 
+            <!-- PHONE SLIDE -->
             <div class="slide active-slide" id="slide-phone">
                 <div class="slide-left">
                     <h2>DIRECT CALL</h2>
@@ -466,7 +475,7 @@
                     <ul class="features-list">
                         <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Direct Line Support</li>
                         <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Instant Response Time</li>
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Active Hours Coverage</li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> 10 AM to 7 PM</li>
                     </ul>
                     <button class="action-btn" onclick="copyText('0313266242', 'Phone number copied!')">COPY PHONE <i data-lucide="copy" size="18"></i></button>
                 </div>
@@ -484,6 +493,7 @@
                 </div>
             </div>
 
+            <!-- EMAIL SLIDE -->
             <div class="slide" id="slide-email">
                 <div class="slide-left">
                     <h2>EMAIL INQUIRY</h2>
@@ -492,6 +502,7 @@
                         <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Official Inquiries</li>
                         <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Document Attachments</li>
                         <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Automated Ticketing</li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Book Here</li>
                     </ul>
                     <button class="action-btn" onclick="copyText('mzgondal58@gmail.com', 'Email address copied!')">COPY EMAIL <i data-lucide="copy" size="18"></i></button>
                 </div>
@@ -509,6 +520,7 @@
                 </div>
             </div>
 
+            <!-- TIMINGS SLIDE -->
             <div class="slide" id="slide-timing">
                 <div class="slide-left">
                     <h2 class="orange-text">WORK SCHEDULE</h2>
@@ -549,6 +561,7 @@
         </div>
     </div>
 
+    <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i data-lucide="check-circle" size="18"></i>
         <span id="toast-msg">Copied!</span>
