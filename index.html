@@ -23,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Navigation */
         header {
             display: flex;
             justify-content: space-between;
@@ -74,7 +73,6 @@
             box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
         }
 
-        /* Hero / Header Section */
         .hero {
             text-align: center;
             padding: 40px 20px 20px 20px;
@@ -101,12 +99,12 @@
             line-height: 1.5;
         }
 
-        /* Tab Switcher (Phone / Email) */
         .tab-container {
             display: flex;
             justify-content: center;
             gap: 12px;
             margin-bottom: 50px;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -133,7 +131,13 @@
             box-shadow: 0 0 20px rgba(0, 255, 102, 0.25);
         }
 
-        /* Main Content Slider Area */
+        .tab-btn.tab-orange.active {
+            background: rgba(255, 120, 0, 0.08);
+            border-color: #ff7800;
+            color: #ff7800;
+            box-shadow: 0 0 20px rgba(255, 120, 0, 0.3);
+        }
+
         .main-wrapper {
             max-width: 1200px;
             width: 100%;
@@ -146,12 +150,12 @@
 
         .content-slider {
             display: flex;
-            width: 200%;
+            width: 300%;
             transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
         }
 
         .slide {
-            width: 50%;
+            width: 33.333%;
             display: grid;
             grid-template-columns: 1fr 1.1fr;
             gap: 40px;
@@ -165,12 +169,16 @@
             opacity: 1;
         }
 
-        /* Left Side Info */
         .slide-left h2 {
             font-size: 48px;
             font-weight: 800;
             margin-bottom: 12px;
             letter-spacing: -0.5px;
+        }
+
+        .slide-left h2.orange-text {
+            color: #ff7800;
+            text-shadow: 0 0 20px rgba(255, 120, 0, 0.3);
         }
 
         .slide-left .subtitle {
@@ -208,7 +216,12 @@
             box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
         }
 
-        /* Copy Contact Action Button */
+        .feature-icon.orange-icon {
+            border-color: #ff7800;
+            color: #ff7800;
+            box-shadow: 0 0 10px rgba(255, 120, 0, 0.3);
+        }
+
         .action-btn {
             display: inline-flex;
             align-items: center;
@@ -227,17 +240,23 @@
             letter-spacing: 0.5px;
         }
 
+        .action-btn.orange-btn {
+            background: #ff7800;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(255, 120, 0, 0.4);
+        }
+
+        .action-btn.orange-btn:hover {
+            background: #ff8c1a;
+            box-shadow: 0 0 35px rgba(255, 120, 0, 0.6);
+        }
+
         .action-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 0 35px rgba(0, 255, 102, 0.6);
             background: #26ff7b;
         }
 
-        .action-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Right Side Glow Card */
         .card-container {
             position: relative;
         }
@@ -252,17 +271,8 @@
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 25px;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(0, 255, 102, 0.4), transparent 60%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
+        .card.orange-card {
+            border-color: rgba(255, 120, 0, 0.3);
         }
 
         .card-header {
@@ -274,7 +284,7 @@
 
         .version-tag {
             font-family: 'JetBrains Mono', monospace;
-            color: #5865f2;
+            color: #8f9ba8;
             font-size: 13px;
         }
 
@@ -292,12 +302,23 @@
             gap: 6px;
         }
 
+        .status-badge.orange-badge {
+            background: rgba(255, 120, 0, 0.1);
+            border-color: rgba(255, 120, 0, 0.4);
+            color: #ff7800;
+        }
+
         .status-dot {
             width: 6px;
             height: 6px;
             background-color: #00ff66;
             border-radius: 50%;
             box-shadow: 0 0 8px #00ff66;
+        }
+
+        .status-dot.orange-dot {
+            background-color: #ff7800;
+            box-shadow: 0 0 8px #ff7800;
         }
 
         .card-icon-wrapper {
@@ -313,11 +334,21 @@
             margin-bottom: 24px;
         }
 
+        .card-icon-wrapper.orange-wrapper {
+            border-color: rgba(255, 120, 0, 0.4);
+            background: rgba(255, 120, 0, 0.05);
+            color: #ff7800;
+        }
+
         .card-title {
             font-size: 28px;
             font-weight: 800;
             color: #00ff66;
             margin-bottom: 4px;
+        }
+
+        .card-title.orange-title {
+            color: #ff7800;
         }
 
         .card-subtitle {
@@ -329,13 +360,41 @@
             margin-bottom: 16px;
         }
 
-        .card-desc {
-            color: #8f9ba8;
+        .timing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             font-size: 14px;
-            line-height: 1.6;
         }
 
-        /* Toast Alert */
+        .timing-row:last-child {
+            border-bottom: none;
+        }
+
+        .timing-day {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .timing-status {
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .status-open {
+            background: rgba(255, 120, 0, 0.15);
+            color: #ff7800;
+        }
+
+        .status-off {
+            background: rgba(255, 50, 50, 0.15);
+            color: #ff4d4d;
+        }
+
         .toast {
             position: fixed;
             bottom: 30px;
@@ -364,13 +423,12 @@
             header { padding: 20px; }
             .hero h1 { font-size: 40px; }
             .slide { grid-template-columns: 1fr; gap: 24px; }
-            .content-slider { width: 200%; }
+            .content-slider { width: 300%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <div class="logo">
             <i data-lucide="eye" class="logo-icon"></i>
@@ -381,13 +439,11 @@
         </div>
     </header>
 
-    <!-- Main Title -->
     <section class="hero">
         <h1>MRD <span>CORPORATION</span></h1>
-        <p>Connecting businesses with next-generation communication systems. Reach out via phone or email for direct access.</p>
+        <p>Connecting businesses with next-generation communication systems. Reach out via phone, email, or check operating hours.</p>
     </section>
 
-    <!-- Swiping Tabs -->
     <div class="tab-container">
         <button class="tab-btn active" id="tab-phone" onclick="switchTab('phone')">
             <i data-lucide="phone" size="16"></i> PHONE
@@ -395,166 +451,81 @@
         <button class="tab-btn" id="tab-email" onclick="switchTab('email')">
             <i data-lucide="mail" size="16"></i> EMAIL
         </button>
+        <button class="tab-btn tab-orange" id="tab-timing" onclick="switchTab('timing')">
+            <i data-lucide="clock" size="16"></i> TIMINGS
+        </button>
     </div>
 
-    <!-- Interactive Slider Content -->
     <div class="main-wrapper">
         <div class="content-slider" id="slider">
-            
-            <!-- PHONE SLIDE -->
+
             <div class="slide active-slide" id="slide-phone">
                 <div class="slide-left">
                     <h2>DIRECT CALL</h2>
                     <p class="subtitle">Immediate assistance available for inquiries and system integration.</p>
-                    
                     <ul class="features-list">
-                        <li class="feature-item">
-                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
-                            Direct Line Support
-                        </li>
-                        <li class="feature-item">
-                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
-                            Instant Response Time
-                        </li>
-                        <li class="feature-item">
-                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
-                            24/7 Availability
-                        </li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Direct Line Support</li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Instant Response Time</li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Active Hours Coverage</li>
                     </ul>
-
-                    <button class="action-btn" onclick="copyText('0313266242', 'Phone number copied!')">
-                        COPY PHONE <i data-lucide="copy" size="18"></i>
-                    </button>
+                    <button class="action-btn" onclick="copyText('0313266242', 'Phone number copied!')">COPY PHONE <i data-lucide="copy" size="18"></i></button>
                 </div>
-
                 <div class="card-container">
                     <div class="card">
                         <div class="card-header">
                             <span class="version-tag">0313266242</span>
-                            <div class="status-badge">
-                                <div class="status-dot"></div> ACTIVE NOW
-                            </div>
+                            <div class="status-badge"><div class="status-dot"></div> ACTIVE NOW</div>
                         </div>
-                        <div class="card-icon-wrapper">
-                            <i data-lucide="phone-call" size="28"></i>
-                        </div>
+                        <div class="card-icon-wrapper"><i data-lucide="phone-call" size="28"></i></div>
                         <div class="card-title">PHONE CONTACT</div>
                         <div class="card-subtitle">MOBILE COMMUNICATIONS</div>
-                        <div class="card-desc">
-                            Connect directly to our representative for instant guidance and real-time updates regarding MRD Corporation services.
-                        </div>
+                        <div class="card-desc">Connect directly to our representative for instant guidance and real-time updates regarding MRD Corporation services.</div>
                     </div>
                 </div>
             </div>
 
-            <!-- EMAIL SLIDE -->
             <div class="slide" id="slide-email">
                 <div class="slide-left">
                     <h2>EMAIL INQUIRY</h2>
                     <p class="subtitle">Send detailed requests and proposal documents to our official support mail.</p>
-                    
                     <ul class="features-list">
-                        <li class="feature-item">
-                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
-                            Official Inquiries
-                        </li>
-                        <li class="feature-item">
-                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
-                            Document Attachments
-                        </li>
-                        <li class="feature-item">
-                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
-                            Automated Ticketing
-                        </li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Official Inquiries</li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Document Attachments</li>
+                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Automated Ticketing</li>
                     </ul>
-
-                    <button class="action-btn" onclick="copyText('mzgondal58@gmail.com', 'Email address copied!')">
-                        COPY EMAIL <i data-lucide="copy" size="18"></i>
-                    </button>
+                    <button class="action-btn" onclick="copyText('mzgondal58@gmail.com', 'Email address copied!')">COPY EMAIL <i data-lucide="copy" size="18"></i></button>
                 </div>
-
                 <div class="card-container">
                     <div class="card">
                         <div class="card-header">
                             <span class="version-tag">mzgondal58@gmail.com</span>
-                            <div class="status-badge">
-                                <div class="status-dot"></div> READY TO RECEIVE
-                            </div>
+                            <div class="status-badge"><div class="status-dot"></div> READY TO RECEIVE</div>
                         </div>
-                        <div class="card-icon-wrapper">
-                            <i data-lucide="mail" size="28"></i>
-                        </div>
+                        <div class="card-icon-wrapper"><i data-lucide="mail" size="28"></i></div>
                         <div class="card-title">EMAIL SUPPORT</div>
                         <div class="card-subtitle">OFFICIAL MAILBOX</div>
-                        <div class="card-desc">
-                            For technical questions, business partnerships, or formal documentation, reach out to our team anytime.
-                        </div>
+                        <div class="card-desc">For technical questions, business partnerships, or formal documentation, reach out to our team anytime.</div>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <!-- Notification Toast -->
-    <div class="toast" id="toast">
-        <i data-lucide="check-circle" size="18"></i>
-        <span id="toast-msg">Copied!</span>
-    </div>
-
-    <script>
-        // Initialize Icons
-        lucide.createIcons();
-
-        // Tab Switching & Swiping Effect Function
-        function switchTab(type) {
-            const slider = document.getElementById('slider');
-            const phoneBtn = document.getElementById('tab-phone');
-            const emailBtn = document.getElementById('tab-email');
-            const phoneSlide = document.getElementById('slide-phone');
-            const emailSlide = document.getElementById('slide-email');
-
-            if (type === 'phone') {
-                slider.style.transform = 'translateX(0%)';
-                phoneBtn.classList.add('active');
-                emailBtn.classList.remove('active');
-                phoneSlide.classList.add('active-slide');
-                emailSlide.classList.remove('active-slide');
-            } else {
-                slider.style.transform = 'translateX(-50%)';
-                emailBtn.classList.add('active');
-                phoneBtn.classList.remove('active');
-                emailSlide.classList.add('active-slide');
-                phoneSlide.classList.remove('active-slide');
-            }
-        }
-
-        // Copy Text Function with Popup Notification
-        function copyText(text, message) {
-            navigator.clipboard.writeText(text).then(() => {
-                showToast(message);
-            }).catch(() => {
-                // Fallback for older browsers
-                const area = document.createElement('textarea');
-                area.value = text;
-                document.body.appendChild(area);
-                area.select();
-                document.execCommand('copy');
-                document.body.removeChild(area);
-                showToast(message);
-            });
-        }
-
-        // Toast Notification Display Function
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-msg');
-            toastMsg.innerText = msg;
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
-        }
-    </script>
-</body>
-</html>
+            <div class="slide" id="slide-timing">
+                <div class="slide-left">
+                    <h2 class="orange-text">WORK SCHEDULE</h2>
+                    <p class="subtitle">Check our official weekly operational hours before scheduling a call or visiting.</p>
+                    <ul class="features-list">
+                        <li class="feature-item"><div class="feature-icon orange-icon"><i data-lucide="check" size="14"></i></div> Mon - Thu: Active Workdays</li>
+                        <li class="feature-item"><div class="feature-icon orange-icon"><i data-lucide="x" size="14"></i></div> Friday: Weekly Off</li>
+                        <li class="feature-item"><div class="feature-icon orange-icon"><i data-lucide="check" size="14"></i></div> Sat - Sun: Weekend Active</li>
+                    </ul>
+                    <button class="action-btn orange-btn" onclick="switchTab('phone')">CALL NOW <i data-lucide="arrow-right" size="18"></i></button>
+                </div>
+                <div class="card-container">
+                    <div class="card orange-card">
+                        <div class="card-header">
+                            <span class="version-tag">OPERATIONAL HOURS</span>
+                            <div class="status-badge orange-badge"><div class="status-dot orange-dot"></div> TIMINGS INFO</div>
+                        </div>
+                        <div class="card-icon-wrapper orange-wrapper"><i data-lucide="calendar" size="28"></i></div>
+                        <div class="card-title orange-title">WEEKLY TIMINGS</div>
+                        <div
