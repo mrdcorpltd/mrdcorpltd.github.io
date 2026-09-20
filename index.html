@@ -1,1 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRD CORPORATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
+        body {
+            background-color: #060709;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Header Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-icon {
+            color: #00ff66;
+            filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.6));
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            border-color: #00ff66;
+            color: #00ff66;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: #00ff66;
+            text-shadow: 0 0 30px rgba(0, 255, 102, 0.5);
+        }
+
+        .hero p {
+            color: #8f9ba8;
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto 32px auto;
+            line-height: 1.5;
+        }
+
+        /* Tab Switcher (Phone / Email) */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #8f9ba8;
+            padding: 12px 32px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active {
+            background: rgba(0, 255, 102, 0.05);
+            border-color: #00ff66;
+            color: #00ff66;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.25);
+        }
+
+        /* Main Content Slider Area */
+        .main-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .content-slider {
+            display: flex;
+            width: 200%;
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .slide {
+            width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+            align-items: center;
+            padding-bottom: 60px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .slide.active-slide {
+            opacity: 1;
+        }
+
+        /* Left Side Info */
+        .slide-left h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-left .subtitle {
+            color: #8f9ba8;
+            font-size: 16px;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1.5px solid #00ff66;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00ff66;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
+        }
+
+        /* Copy Contact Action Button */
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #00ff66;
+            color: #000000;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(0, 255, 102, 0.6);
+            background: #26ff7b;
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Right Side Glow Card */
+        .card-container {
+            position: relative;
+        }
+
+        .card {
+            background: rgba(13, 17, 23, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            backdrop-filter: blur(20px);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 25px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(0, 255, 102, 0.4), transparent 60%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .version-tag {
+            font-family: 'JetBrains Mono', monospace;
+            color: #5865f2;
+            font-size: 13px;
+        }
+
+        .status-badge {
+            background: rgba(0, 255, 102, 0.1);
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            color: #00ff66;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #00ff66;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00ff66;
+        }
+
+        .card-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 255, 102, 0.3);
+            background: rgba(0, 255, 102, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00ff66;
+            margin-bottom: 24px;
+        }
+
+        .card-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #00ff66;
+            margin-bottom: 4px;
+        }
+
+        .card-subtitle {
+            font-size: 11px;
+            font-weight: 700;
+            color: #8f9ba8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .card-desc {
+            color: #8f9ba8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Toast Alert */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #00ff66;
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 10px 30px rgba(0, 255, 102, 0.4);
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 900px) {
+            header { padding: 20px; }
+            .hero h1 { font-size: 40px; }
+            .slide { grid-template-columns: 1fr; gap: 24px; }
+            .content-slider { width: 200%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo">
+            <i data-lucide="eye" class="logo-icon"></i>
+            <span>MRD</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn" onclick="copyText('0313266242', 'Phone number copied!')">CONTACT US</button>
+        </div>
+    </header>
+
+    <!-- Main Title -->
+    <section class="hero">
+        <h1>MRD <span>CORPORATION</span></h1>
+        <p>Connecting businesses with next-generation communication systems. Reach out via phone or email for direct access.</p>
+    </section>
+
+    <!-- Swiping Tabs -->
+    <div class="tab-container">
+        <button class="tab-btn active" id="tab-phone" onclick="switchTab('phone')">
+            <i data-lucide="phone" size="16"></i> PHONE
+        </button>
+        <button class="tab-btn" id="tab-email" onclick="switchTab('email')">
+            <i data-lucide="mail" size="16"></i> EMAIL
+        </button>
+    </div>
+
+    <!-- Interactive Slider Content -->
+    <div class="main-wrapper">
+        <div class="content-slider" id="slider">
+            
+            <!-- PHONE SLIDE -->
+            <div class="slide active-slide" id="slide-phone">
+                <div class="slide-left">
+                    <h2>DIRECT CALL</h2>
+                    <p class="subtitle">Immediate assistance available for inquiries and system integration.</p>
+                    
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
+                            Direct Line Support
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
+                            Instant Response Time
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
+                            24/7 Availability
+                        </li>
+                    </ul>
+
+                    <button class="action-btn" onclick="copyText('0313266242', 'Phone number copied!')">
+                        COPY PHONE <i data-lucide="copy" size="18"></i>
+                    </button>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="version-tag">0313266242</span>
+                            <div class="status-badge">
+                                <div class="status-dot"></div> ACTIVE NOW
+                            </div>
+                        </div>
+                        <div class="card-icon-wrapper">
+                            <i data-lucide="phone-call" size="28"></i>
+                        </div>
+                        <div class="card-title">PHONE CONTACT</div>
+                        <div class="card-subtitle">MOBILE COMMUNICATIONS</div>
+                        <div class="card-desc">
+                            Connect directly to our representative for instant guidance and real-time updates regarding MRD Corporation services.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMAIL SLIDE -->
+            <div class="slide" id="slide-email">
+                <div class="slide-left">
+                    <h2>EMAIL INQUIRY</h2>
+                    <p class="subtitle">Send detailed requests and proposal documents to our official support mail.</p>
+                    
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
+                            Official Inquiries
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
+                            Document Attachments
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon"><i data-lucide="check" size="14"></i></div>
+                            Automated Ticketing
+                        </li>
+                    </ul>
+
+                    <button class="action-btn" onclick="copyText('mzgondal58@gmail.com', 'Email address copied!')">
+                        COPY EMAIL <i data-lucide="copy" size="18"></i>
+                    </button>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="version-tag">mzgondal58@gmail.com</span>
+                            <div class="status-badge">
+                                <div class="status-dot"></div> READY TO RECEIVE
+                            </div>
+                        </div>
+                        <div class="card-icon-wrapper">
+                            <i data-lucide="mail" size="28"></i>
+                        </div>
+                        <div class="card-title">EMAIL SUPPORT</div>
+                        <div class="card-subtitle">OFFICIAL MAILBOX</div>
+                        <div class="card-desc">
+                            For technical questions, business partnerships, or formal documentation, reach out to our team anytime.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <i data-lucide="check-circle" size="18"></i>
+        <span id="toast-msg">Copied!</span>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Tab Switching & Swiping Effect Function
+        function switchTab(type) {
+            const slider = document.getElementById('slider');
+            const phoneBtn = document.getElementById('tab-phone');
+            const emailBtn = document.getElementById('tab-email');
+            const phoneSlide = document.getElementById('slide-phone');
+            const emailSlide = document.getElementById('slide-email');
+
+            if (type === 'phone') {
+                slider.style.transform = 'translateX(0%)';
+                phoneBtn.classList.add('active');
+                emailBtn.classList.remove('active');
+                phoneSlide.classList.add('active-slide');
+                emailSlide.classList.remove('active-slide');
+            } else {
+                slider.style.transform = 'translateX(-50%)';
+                emailBtn.classList.add('active');
+                phoneBtn.classList.remove('active');
+                emailSlide.classList.add('active-slide');
+                phoneSlide.classList.remove('active-slide');
+            }
+        }
+
+        // Copy Text Function with Popup Notification
+        function copyText(text, message) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(message);
+            }).catch(() => {
+                // Fallback for older browsers
+                const area = document.createElement('textarea');
+                area.value = text;
+                document.body.appendChild(area);
+                area.select();
+                document.execCommand('copy');
+                document.body.removeChild(area);
+                showToast(message);
+            });
+        }
+
+        // Toast Notification Display Function
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
