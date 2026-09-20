@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MRD CORPORATION</title>
 
-    <!-- FAVICON (TAB ICON) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff66' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z'/><circle cx='12' cy='12' r='3'/></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect width='16' height='20' x='4' y='2' rx='2' ry='2'/><path d='M9 22v-4h6v4'/><path d='M8 6h.01'/><path d='M16 6h.01'/><path d='M12 6h.01'/><path d='M12 10h.01'/><path d='M12 14h.01'/><path d='M16 10h.01'/><path d='M16 14h.01'/><path d='M8 10h.01'/><path d='M8 14h.01'/></svg>">
 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -47,8 +46,8 @@
         }
 
         .logo-icon {
-            color: #00ff66;
-            filter: drop-shadow(0 0 8px rgba(0, 255, 102, 0.6));
+            color: #ffffff;
+            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
         }
 
         .nav-links {
@@ -72,9 +71,9 @@
         }
 
         .nav-btn:hover {
-            border-color: #00ff66;
-            color: #00ff66;
-            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+            border-color: #00b0ff;
+            color: #00b0ff;
+            box-shadow: 0 0 15px rgba(0, 176, 255, 0.3);
         }
 
         .hero {
@@ -91,8 +90,8 @@
         }
 
         .hero h1 span {
-            color: #00ff66;
-            text-shadow: 0 0 30px rgba(0, 255, 102, 0.5);
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
         }
 
         .hero p {
@@ -128,13 +127,23 @@
             gap: 8px;
         }
 
-        .tab-btn.active {
-            background: rgba(0, 255, 102, 0.05);
-            border-color: #00ff66;
-            color: #00ff66;
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.25);
+        /* BLUE TAB (PHONE) */
+        .tab-btn.tab-blue.active {
+            background: rgba(0, 176, 255, 0.08);
+            border-color: #00b0ff;
+            color: #00b0ff;
+            box-shadow: 0 0 20px rgba(0, 176, 255, 0.3);
         }
 
+        /* RED TAB (EMAIL) */
+        .tab-btn.tab-red.active {
+            background: rgba(255, 51, 88, 0.08);
+            border-color: #ff3358;
+            color: #ff3358;
+            box-shadow: 0 0 20px rgba(255, 51, 88, 0.3);
+        }
+
+        /* ORANGE TAB (TIMINGS) */
         .tab-btn.tab-orange.active {
             background: rgba(255, 120, 0, 0.08);
             border-color: #ff7800;
@@ -180,10 +189,10 @@
             letter-spacing: -0.5px;
         }
 
-        .slide-left h2.orange-text {
-            color: #ff7800;
-            text-shadow: 0 0 20px rgba(255, 120, 0, 0.3);
-        }
+        /* COLOR HEADINGS */
+        .blue-text { color: #00b0ff; text-shadow: 0 0 20px rgba(0, 176, 255, 0.3); }
+        .red-text { color: #ff3358; text-shadow: 0 0 20px rgba(255, 51, 88, 0.3); }
+        .orange-text { color: #ff7800; text-shadow: 0 0 20px rgba(255, 120, 0, 0.3); }
 
         .slide-left .subtitle {
             color: #8f9ba8;
@@ -212,26 +221,21 @@
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            border: 1.5px solid #00ff66;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #00ff66;
-            box-shadow: 0 0 10px rgba(0, 255, 102, 0.3);
         }
 
-        .feature-icon.orange-icon {
-            border-color: #ff7800;
-            color: #ff7800;
-            box-shadow: 0 0 10px rgba(255, 120, 0, 0.3);
-        }
+        /* FEATURE ICONS COLORS */
+        .blue-icon { border: 1.5px solid #00b0ff; color: #00b0ff; box-shadow: 0 0 10px rgba(0, 176, 255, 0.3); }
+        .red-icon { border: 1.5px solid #ff3358; color: #ff3358; box-shadow: 0 0 10px rgba(255, 51, 88, 0.3); }
+        .orange-icon { border: 1.5px solid #ff7800; color: #ff7800; box-shadow: 0 0 10px rgba(255, 120, 0, 0.3); }
 
+        /* BUTTON STYLES */
         .action-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: #00ff66;
-            color: #000000;
             padding: 16px 32px;
             border-radius: 12px;
             font-weight: 700;
@@ -239,27 +243,18 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 0 25px rgba(0, 255, 102, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .action-btn.orange-btn {
-            background: #ff7800;
-            color: #ffffff;
-            box-shadow: 0 0 25px rgba(255, 120, 0, 0.4);
-        }
+        .blue-btn { background: #00b0ff; color: #ffffff; box-shadow: 0 0 25px rgba(0, 176, 255, 0.4); }
+        .blue-btn:hover { background: #33c0ff; box-shadow: 0 0 35px rgba(0, 176, 255, 0.6); }
 
-        .action-btn.orange-btn:hover {
-            background: #ff8c1a;
-            box-shadow: 0 0 35px rgba(255, 120, 0, 0.6);
-        }
+        .red-btn { background: #ff3358; color: #ffffff; box-shadow: 0 0 25px rgba(255, 51, 88, 0.4); }
+        .red-btn:hover { background: #ff5c7a; box-shadow: 0 0 35px rgba(255, 51, 88, 0.6); }
 
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 35px rgba(0, 255, 102, 0.6);
-            background: #26ff7b;
-        }
+        .orange-btn { background: #ff7800; color: #ffffff; box-shadow: 0 0 25px rgba(255, 120, 0, 0.4); }
+        .orange-btn:hover { background: #ff8c1a; box-shadow: 0 0 35px rgba(255, 120, 0, 0.6); }
 
         .card-container {
             position: relative;
@@ -267,7 +262,6 @@
 
         .card {
             background: rgba(13, 17, 23, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 24px;
             padding: 40px;
             position: relative;
@@ -275,9 +269,9 @@
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
         }
 
-        .card.orange-card {
-            border-color: rgba(255, 120, 0, 0.3);
-        }
+        .card.blue-card { border: 1px solid rgba(0, 176, 255, 0.3); }
+        .card.red-card { border: 1px solid rgba(255, 51, 88, 0.3); }
+        .card.orange-card { border: 1px solid rgba(255, 120, 0, 0.3); }
 
         .card-header {
             display: flex;
@@ -293,9 +287,6 @@
         }
 
         .status-badge {
-            background: rgba(0, 255, 102, 0.1);
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            color: #00ff66;
             padding: 4px 12px;
             border-radius: 100px;
             font-size: 10px;
@@ -306,54 +297,43 @@
             gap: 6px;
         }
 
-        .status-badge.orange-badge {
-            background: rgba(255, 120, 0, 0.1);
-            border-color: rgba(255, 120, 0, 0.4);
-            color: #ff7800;
-        }
+        .blue-badge { background: rgba(0, 176, 255, 0.1); border: 1px solid rgba(0, 176, 255, 0.3); color: #00b0ff; }
+        .red-badge { background: rgba(255, 51, 88, 0.1); border: 1px solid rgba(255, 51, 88, 0.3); color: #ff3358; }
+        .orange-badge { background: rgba(255, 120, 0, 0.1); border: 1px solid rgba(255, 120, 0, 0.3); color: #ff7800; }
 
         .status-dot {
             width: 6px;
             height: 6px;
-            background-color: #00ff66;
             border-radius: 50%;
-            box-shadow: 0 0 8px #00ff66;
         }
 
-        .status-dot.orange-dot {
-            background-color: #ff7800;
-            box-shadow: 0 0 8px #ff7800;
-        }
+        .blue-dot { background-color: #00b0ff; box-shadow: 0 0 8px #00b0ff; }
+        .red-dot { background-color: #ff3358; box-shadow: 0 0 8px #ff3358; }
+        .orange-dot { background-color: #ff7800; box-shadow: 0 0 8px #ff7800; }
 
         .card-icon-wrapper {
             width: 60px;
             height: 60px;
             border-radius: 16px;
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            background: rgba(0, 255, 102, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #00ff66;
             margin-bottom: 24px;
         }
 
-        .card-icon-wrapper.orange-wrapper {
-            border-color: rgba(255, 120, 0, 0.4);
-            background: rgba(255, 120, 0, 0.05);
-            color: #ff7800;
-        }
+        .blue-wrapper { border: 1px solid rgba(0, 176, 255, 0.4); background: rgba(0, 176, 255, 0.05); color: #ffffff; }
+        .red-wrapper { border: 1px solid rgba(255, 51, 88, 0.4); background: rgba(255, 51, 88, 0.05); color: #ffffff; }
+        .orange-wrapper { border: 1px solid rgba(255, 120, 0, 0.4); background: rgba(255, 120, 0, 0.05); color: #ffffff; }
 
         .card-title {
             font-size: 28px;
             font-weight: 800;
-            color: #00ff66;
             margin-bottom: 4px;
         }
 
-        .card-title.orange-title {
-            color: #ff7800;
-        }
+        .blue-title { color: #00b0ff; }
+        .red-title { color: #ff3358; }
+        .orange-title { color: #ff7800; }
 
         .card-subtitle {
             font-size: 11px;
@@ -409,7 +389,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: #00ff66;
+            background: #ffffff;
             color: #000;
             padding: 12px 24px;
             border-radius: 8px;
@@ -420,7 +400,7 @@
             transform: translateY(100px);
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            box-shadow: 0 10px 30px rgba(0, 255, 102, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
             z-index: 1000;
         }
 
@@ -441,7 +421,7 @@
 
     <header>
         <div class="logo">
-            <i data-lucide="eye" class="logo-icon"></i>
+            <i data-lucide="building-2" class="logo-icon"></i>
             <span>MRD</span>
         </div>
         <div class="nav-links">
@@ -454,12 +434,11 @@
         <p>Connecting businesses with next-generation communication systems. Reach out via phone, email, or check operating hours.</p>
     </section>
 
-    <!-- Navigation Tabs -->
     <div class="tab-container">
-        <button class="tab-btn active" id="tab-phone" onclick="switchTab('phone')">
+        <button class="tab-btn tab-blue active" id="tab-phone" onclick="switchTab('phone')">
             <i data-lucide="phone" size="16"></i> PHONE
         </button>
-        <button class="tab-btn" id="tab-email" onclick="switchTab('email')">
+        <button class="tab-btn tab-red" id="tab-email" onclick="switchTab('email')">
             <i data-lucide="mail" size="16"></i> EMAIL
         </button>
         <button class="tab-btn tab-orange" id="tab-timing" onclick="switchTab('timing')">
@@ -467,64 +446,60 @@
         </button>
     </div>
 
-    <!-- Main Content Slider -->
     <div class="main-wrapper">
         <div class="content-slider" id="slider">
 
-            <!-- PHONE SLIDE -->
             <div class="slide active-slide" id="slide-phone">
                 <div class="slide-left">
-                    <h2>DIRECT CALL</h2>
+                    <h2 class="blue-text">DIRECT CALL</h2>
                     <p class="subtitle">Immediate assistance available for inquiries and system integration.</p>
                     <ul class="features-list">
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Direct Line Support</li>
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Instant Response Time</li>
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> 10 AM to 7 PM</li>
+                        <li class="feature-item"><div class="feature-icon blue-icon"><i data-lucide="check" size="14"></i></div> Direct Line Support</li>
+                        <li class="feature-item"><div class="feature-icon blue-icon"><i data-lucide="check" size="14"></i></div> Instant Response Time</li>
+                        <li class="feature-item"><div class="feature-icon blue-icon"><i data-lucide="check" size="14"></i></div> 10 AM to 7 PM</li>
                     </ul>
-                    <button class="action-btn" onclick="copyText('0313266242', 'Phone number copied!')">COPY PHONE <i data-lucide="copy" size="18"></i></button>
+                    <button class="action-btn blue-btn" onclick="copyText('0313266242', 'Phone number copied!')">COPY PHONE <i data-lucide="copy" size="18"></i></button>
                 </div>
                 <div class="card-container">
-                    <div class="card">
+                    <div class="card blue-card">
                         <div class="card-header">
                             <span class="version-tag">0313266242</span>
-                            <div class="status-badge"><div class="status-dot"></div> ACTIVE NOW</div>
+                            <div class="status-badge blue-badge"><div class="status-dot blue-dot"></div> ACTIVE NOW</div>
                         </div>
-                        <div class="card-icon-wrapper"><i data-lucide="phone-call" size="28"></i></div>
-                        <div class="card-title">PHONE CONTACT</div>
+                        <div class="card-icon-wrapper blue-wrapper"><i data-lucide="building-2" size="28"></i></div>
+                        <div class="card-title blue-title">PHONE CONTACT</div>
                         <div class="card-subtitle">MOBILE COMMUNICATIONS</div>
                         <div class="card-desc">Connect directly to our representative for instant guidance and real-time updates regarding MRD Corporation services.</div>
                     </div>
                 </div>
             </div>
 
-            <!-- EMAIL SLIDE -->
             <div class="slide" id="slide-email">
                 <div class="slide-left">
-                    <h2>EMAIL INQUIRY</h2>
+                    <h2 class="red-text">EMAIL INQUIRY</h2>
                     <p class="subtitle">Send detailed requests and proposal documents to our official support mail.</p>
                     <ul class="features-list">
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Official Inquiries</li>
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Document Attachments</li>
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Automated Ticketing</li>
-                        <li class="feature-item"><div class="feature-icon"><i data-lucide="check" size="14"></i></div> Book Here</li>
+                        <li class="feature-item"><div class="feature-icon red-icon"><i data-lucide="check" size="14"></i></div> Official Inquiries</li>
+                        <li class="feature-item"><div class="feature-icon red-icon"><i data-lucide="check" size="14"></i></div> Document Attachments</li>
+                        <li class="feature-item"><div class="feature-icon red-icon"><i data-lucide="check" size="14"></i></div> Automated Ticketing</li>
+                        <li class="feature-item"><div class="feature-icon red-icon"><i data-lucide="check" size="14"></i></div> Book Here</li>
                     </ul>
-                    <button class="action-btn" onclick="copyText('mzgondal58@gmail.com', 'Email address copied!')">COPY EMAIL <i data-lucide="copy" size="18"></i></button>
+                    <button class="action-btn red-btn" onclick="copyText('mzgondal58@gmail.com', 'Email address copied!')">COPY EMAIL <i data-lucide="copy" size="18"></i></button>
                 </div>
                 <div class="card-container">
-                    <div class="card">
+                    <div class="card red-card">
                         <div class="card-header">
                             <span class="version-tag">mzgondal58@gmail.com</span>
-                            <div class="status-badge"><div class="status-dot"></div> READY TO RECEIVE</div>
+                            <div class="status-badge red-badge"><div class="status-dot red-dot"></div> READY TO RECEIVE</div>
                         </div>
-                        <div class="card-icon-wrapper"><i data-lucide="mail" size="28"></i></div>
-                        <div class="card-title">EMAIL SUPPORT</div>
+                        <div class="card-icon-wrapper red-wrapper"><i data-lucide="building-2" size="28"></i></div>
+                        <div class="card-title red-title">EMAIL SUPPORT</div>
                         <div class="card-subtitle">OFFICIAL MAILBOX</div>
                         <div class="card-desc">For technical questions, business partnerships, or formal documentation, reach out to our team anytime.</div>
                     </div>
                 </div>
             </div>
 
-            <!-- TIMINGS SLIDE -->
             <div class="slide" id="slide-timing">
                 <div class="slide-left">
                     <h2 class="orange-text">WORK SCHEDULE</h2>
@@ -542,7 +517,7 @@
                             <span class="version-tag">OPERATIONAL HOURS</span>
                             <div class="status-badge orange-badge"><div class="status-dot orange-dot"></div> TIMINGS INFO</div>
                         </div>
-                        <div class="card-icon-wrapper orange-wrapper"><i data-lucide="calendar" size="28"></i></div>
+                        <div class="card-icon-wrapper orange-wrapper"><i data-lucide="building-2" size="28"></i></div>
                         <div class="card-title orange-title">WEEKLY TIMINGS</div>
                         <div class="card-subtitle">MRD SCHEDULE</div>
                         
@@ -565,7 +540,6 @@
         </div>
     </div>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast">
         <i data-lucide="check-circle" size="18"></i>
         <span id="toast-msg">Copied!</span>
